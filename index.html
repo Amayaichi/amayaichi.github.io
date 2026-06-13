@@ -1,21 +1,388 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Amayaichi Apps</title>
-  </head>
-  <body>
-    <h1>Amayaichi Apps</h1>
-    <h2>Twilight Keepers</h2>
-    <p>スマートフォン向けゲームアプリを公開しています。</p>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Amayaichi Apps の公式開発者サイト。スマートフォン向けゲーム Twilight Keepers の情報、Play Store、プライバシーポリシーへのリンクを掲載しています。">
+  <title>Amayaichi Apps</title>
+  <style>
+    :root {
+      --bg: #0f1020;
+      --bg-deep: #080914;
+      --panel: rgba(27, 29, 54, 0.92);
+      --panel-light: rgba(42, 45, 80, 0.88);
+      --text: #f4efe3;
+      --muted: #c9bfa8;
+      --line: rgba(218, 187, 112, 0.28);
+      --gold: #d9b45f;
+      --gold-light: #f3d58b;
+      --accent: #8e6de8;
+      --shadow: rgba(0, 0, 0, 0.45);
+    }
 
-    <ul>
-      <li>
-        <a href="https://amayaichi.github.io/twilight-keepers-policy/">
-          Twilight Keepers Privacy Policy
-        </a>
-      </li>
-    </ul>
-  </body>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--bg-deep);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Noto Sans JP",
+        sans-serif;
+      line-height: 1.8;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(142, 109, 232, 0.24), transparent 34%),
+        radial-gradient(circle at top right, rgba(217, 180, 95, 0.18), transparent 28%),
+        linear-gradient(180deg, #13142a 0%, #0f1020 45%, #080914 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent 72%);
+    }
+
+    .page {
+      position: relative;
+      width: min(1040px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 64px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 44px 32px;
+      background:
+        linear-gradient(135deg, rgba(217, 180, 95, 0.14), transparent 42%),
+        linear-gradient(180deg, rgba(42, 45, 80, 0.96), rgba(18, 19, 38, 0.96));
+      box-shadow: 0 24px 80px var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -90px;
+      top: -90px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(243, 213, 139, 0.22), transparent 66%);
+    }
+
+    .site-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      padding: 6px 12px;
+      border: 1px solid rgba(217, 180, 95, 0.36);
+      border-radius: 999px;
+      color: var(--gold-light);
+      background: rgba(8, 9, 20, 0.42);
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+    }
+
+    .site-label::before {
+      content: "✦";
+      color: var(--gold);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 16px;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      line-height: 1.12;
+      letter-spacing: 0.02em;
+      color: var(--gold-light);
+      text-shadow: 0 2px 16px rgba(217, 180, 95, 0.16);
+    }
+
+    .subtitle {
+      max-width: 760px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 10px 18px;
+      border: 1px solid rgba(243, 213, 139, 0.42);
+      border-radius: 999px;
+      color: #16111f;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      box-shadow: 0 12px 30px rgba(217, 180, 95, 0.2);
+    }
+
+    .button.secondary {
+      color: var(--gold-light);
+      background: rgba(8, 9, 20, 0.36);
+    }
+
+    .button:hover {
+      filter: brightness(1.08);
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 28px;
+      background:
+        linear-gradient(180deg, var(--panel), rgba(17, 18, 36, 0.94));
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--gold-light);
+      font-size: 1.45rem;
+      line-height: 1.35;
+    }
+
+    .section-title::before {
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      box-shadow: 0 0 16px rgba(217, 180, 95, 0.45);
+      transform: rotate(45deg);
+      flex: 0 0 auto;
+    }
+
+    .note,
+    .small {
+      color: var(--muted);
+    }
+
+    .summary-list,
+    .link-list {
+      display: grid;
+      gap: 12px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .summary-list li,
+    .link-list a {
+      position: relative;
+      display: block;
+      padding: 12px 14px 12px 40px;
+      border: 1px solid rgba(217, 180, 95, 0.18);
+      border-radius: 14px;
+      background: rgba(8, 9, 20, 0.32);
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .summary-list li::before,
+    .link-list a::before {
+      position: absolute;
+      left: 14px;
+      top: 12px;
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+
+    .summary-list li::before {
+      content: "✓";
+    }
+
+    .link-list a::before {
+      content: "›";
+    }
+
+    .link-list a:hover {
+      border-color: rgba(243, 213, 139, 0.52);
+      color: var(--gold-light);
+    }
+
+    .app-card {
+      display: grid;
+      gap: 16px;
+    }
+
+    .app-name {
+      margin-bottom: 6px;
+      color: var(--gold-light);
+      font-size: 1.75rem;
+      line-height: 1.25;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 10px;
+      border: 1px solid rgba(142, 109, 232, 0.36);
+      border-radius: 999px;
+      color: #d8cdfc;
+      background: rgba(142, 109, 232, 0.12);
+      font-size: 0.86rem;
+    }
+
+    .footer {
+      margin-top: 28px;
+      padding: 20px;
+      text-align: center;
+      color: #9f947f;
+      font-size: 0.9rem;
+    }
+
+    .footer a {
+      color: var(--gold-light);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(243, 213, 139, 0.36);
+    }
+
+    @media (max-width: 780px) {
+      .page {
+        width: min(100% - 20px, 1040px);
+        padding: 24px 0 40px;
+      }
+
+      .hero {
+        padding: 30px 20px;
+        border-radius: 20px;
+      }
+
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 22px 18px;
+        border-radius: 18px;
+      }
+
+      .section-title {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="site-label">Official Developer Website</div>
+      <h1>Amayaichi Apps</h1>
+      <p class="subtitle">
+        Amayaichi Apps は、スマートフォン向けゲームアプリの情報を掲載する公式開発者サイトです。
+        現在は、運営・育成RPG「Twilight Keepers」の公開情報、ストアリンク、プライバシーポリシーを案内しています。
+      </p>
+      <div class="actions">
+        <a class="button" href="https://play.google.com/store/apps/details?id=com.amayaichi.twilightkeepers" target="_blank" rel="noopener noreferrer">Google Play で見る</a>
+        <a class="button secondary" href="https://amayaichi.github.io/twilight-keepers-policy/">Privacy Policy</a>
+      </div>
+    </section>
+
+    <div class="content">
+      <section class="card app-card">
+        <div>
+          <h2 class="section-title">Published App</h2>
+          <h3 class="app-name">Twilight Keepers</h3>
+          <p>
+            Twilight Keepers は、冒険者を雇用・育成し、パーティ編成、クエスト派遣、訓練、施設管理を通じて
+            魔王ダンジョン攻略を目指す運営・育成RPGです。
+          </p>
+          <p class="note">
+            端末内セーブで遊べるシングルプレイヤー向けゲームです。アプリ内課金はありません。
+          </p>
+          <div class="badge-row" aria-label="App features">
+            <span class="badge">Party Management RPG</span>
+            <span class="badge">Local Save Data</span>
+            <span class="badge">No In-App Purchases</span>
+            <span class="badge">Optional Rewarded Ads</span>
+          </div>
+        </div>
+        <ul class="summary-list">
+          <li>冒険者の雇用、育成、パーティ編成を中心に進行します。</li>
+          <li>クエスト派遣、施設管理、長期育成によって戦力を整えます。</li>
+          <li>アクション操作ではなく、計画と管理を重視したファンタジーRPGです。</li>
+        </ul>
+      </section>
+
+      <aside class="card">
+        <h2 class="section-title">Links</h2>
+        <p class="small">
+          ストア掲載情報、プライバシーポリシー、広告認定情報へのリンクです。
+        </p>
+        <nav class="link-list" aria-label="Developer links">
+          <a href="https://play.google.com/store/apps/details?id=com.amayaichi.twilightkeepers" target="_blank" rel="noopener noreferrer">Twilight Keepers on Google Play</a>
+          <a href="https://amayaichi.github.io/twilight-keepers-policy/">Privacy Policy</a>
+          <a href="https://amayaichi.github.io/app-ads.txt">app-ads.txt</a>
+        </nav>
+      </aside>
+    </div>
+
+    <section class="card" style="margin-top: 22px;">
+      <h2 class="section-title">About Developer</h2>
+      <p>
+        Amayaichi Apps は、個人開発によるゲームアプリを公開しています。
+        アプリに関するプライバシー情報や広告配信に関する情報は、この公式サイトから確認できます。
+      </p>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 Amayaichi Apps. All rights reserved.</p>
+    </footer>
+  </main>
+</body>
 </html>
