@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MonoLifeのアカウント削除をアプリ外から申請する手順。削除対象・保存期間・本人確認の方法をご案内します。">
+  <title>アカウント削除申請 | MonoLife</title>
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../" aria-label="MonoLife トップページ">
+        <span class="brand-icon" aria-hidden="true">M</span>
+        <span>MonoLife<small>Household shopping planner</small></span>
+      </a>
+      <nav class="site-nav" aria-label="サイト内ナビゲーション">
+        <a href="../">アプリ紹介</a>
+        <a href="../privacy-policy/">プライバシー</a>
+        <a href="./" aria-current="page">アカウント削除</a>
+        <a href="../../">81app</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <p class="breadcrumbs"><a href="../">MonoLife</a> / アカウント削除申請</p>
+    <h1 class="page-title">MonoLife アカウント削除申請</h1>
+    <p class="lead">アプリにログインできない場合や、アプリをアンインストールした場合も、再インストールやログインなしで削除希望を申し出ることができます。</p>
+    <section class="contact" id="request" aria-labelledby="request-title">
+      <h2 id="request-title">アカウント削除を申請する</h2>
+      <p>運営者：<strong>MonoLife運営（Amayaichi）</strong></p>
+      <p>受付メール：<a class="email" href="mailto:81app.dev@gmail.com?subject=MonoLife%20Account%20Deletion%20Request">81app.dev@gmail.com</a></p>
+      <div class="actions">
+        <a class="button primary" href="mailto:81app.dev@gmail.com?subject=MonoLife%20Account%20Deletion%20Request">削除申請メールを作成</a>
+      </div>
+      <p>メールアプリが開かない場合は、宛先 <strong>81app.dev@gmail.com</strong>、件名「MonoLife アカウント削除申請」でメールを作成し、本文に「MonoLifeのアカウント削除を希望」と記載してください。</p>
+      <p class="muted">申請の時点でアカウントが削除されるわけではありません。運営者が本人確認と必要な手続きを案内します。最初のメールにパスワード、復旧コード、認証情報を記載しないでください。</p>
+    </section>
+    <section class="surface" aria-labelledby="procedure">
+      <h2 id="procedure">申請から削除までの流れ</h2>
+      <ol>
+        <li><strong>申請を送信：</strong>上記窓口からアカウント削除を希望する旨をご連絡ください。</li>
+        <li><strong>受付・一次返信：</strong>申請を受け付けた日から原則7日以内に、本人確認と必要な追加手続きを案内します。</li>
+        <li><strong>本人確認：</strong>パスキー等の安全な方法で本人のアカウントであることを確認します。メールアドレス・表示名・ユーザーID・家族の招待情報だけでは本人確認としません。</li>
+        <li><strong>世帯情報の確認：</strong>家族共有のオーナーは他メンバーへの権限移譲が必要です。最後のメンバーの場合は世帯解散と共有データ削除を確認します。</li>
+        <li><strong>削除・完了連絡：</strong>本人確認が完了した日から原則30日以内に削除し、削除処理の完了を確認してご連絡します。</li>
+      </ol>
+      <div class="caution">
+        <strong>パスキーなどの認証手段をすべて失った場合</strong>
+        <p>その場合も申請は受け付けます。ただし本人であることを安全に確認できなければ、第三者による不正削除を防ぐため、アカウントの削除を保留し、理由と次の手順を案内します。</p>
+      </div>
+    </section>
+    <section class="surface" aria-labelledby="deletion-data">
+      <h2 id="deletion-data">削除されるデータと残るデータ</h2>
+      <p>アカウントを削除すると、本人の認証アカウント・パスキー等の資格情報、プロフィール、本人専用のアイテム・購入履歴・通知登録・設定などのクラウドデータを削除します。</p>
+      <p>家族共有中のアイテムと購入履歴は、残る家族が利用できるよう保持します。退会した人の購入者名は「退会済み」と表示します。世帯の最後のメンバーが解散する場合は、共有データの削除を別途確認します。</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">保持する情報</th><th scope="col">保持期間・目的</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">一般セキュリティ監査ログ（運営アプリが管理する分）</th><td>原則30日間。不正利用の調査や障害対応のためです。クラウド提供者が管理するログには別の保存条件が適用されます。</td></tr>
+            <tr><th scope="row">アカウント削除完了の最小証跡</th><td>完了後90日間。削除処理の確認と安全な障害対応のためです。</td></tr>
+            <tr><th scope="row">削除処理中のジョブ・再利用防止情報</th><td>処理中の記録は完了まで保持します。削除済みユーザーIDの再利用防止に必要な最小限の情報は、安全に除去できる条件が整うまで保持します。</td></tr>
+            <tr><th scope="row">運営者管理のクラウドバックアップ</th><td>導入した場合は作成から30日間。退会データが保持期限までバックアップに残ることがあります。復元時には削除済みデータの再有効化を防ぎます。</td></tr>
+            <tr><th scope="row">継続する家族の共有購入履歴</th><td>世帯の共有情報として維持し、退会者を匿名化します。世帯解散時は別途削除確認を行います。</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>端末内に独立して保存している情報や、ご自身が書き出したバックアップファイルは、クラウドアカウント削除では消去されません。端末内の消去機能・ファイルの保存先で別途削除してください。</p>
+      <p><a href="../privacy-policy/#retention">データ保持期間と取扱いの詳細</a></p>
+    </section>
+    <section class="surface" aria-labelledby="security">
+      <h2 id="security">安全な申請のために</h2>
+      <ul>
+        <li>パスキーの秘密情報、復旧コードの原文、パスワード、認証トークン、世帯招待コードをメールに記載しないでください。</li>
+        <li>運営者からの返信やメールの所有だけで本人確認が完了することはありません。</li>
+        <li>アプリにログインできる場合は、設定画面の「アカウントを削除」から削除することもできます。</li>
+        <li>定期購入がある場合は、アカウント削除と別にストア側での定期購入解約が必要な場合があります。</li>
+      </ul>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© 2026 MonoLife運営（Amayaichi）</p>
+      <p><a href="../">MonoLife</a> · <a href="../privacy-policy/">プライバシー</a> · <a href="../../">81app</a></p>
+    </div>
+  </footer>
+</body>
+</html>
