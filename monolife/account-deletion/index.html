@@ -3,11 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
   <meta name="description" content="バイカレ（BuyCalendar）のアカウント削除をアプリ外から申請する手順。削除対象・保存期間・本人確認の方法をご案内します。">
   <title>アカウント削除申請 | バイカレ</title>
   <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
+  <div class="preview-banner" role="note">
+    <div class="wrap"><strong>公開前プレビュー</strong> このページは表示確認用です。クラウド認証・課金・アカウント削除処理およびデータ保持条件は実運用前の検証中です。正式な利用・削除受付の案内として利用しないでください。</div>
+  </div>
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="../" aria-label="バイカレ トップページ">
@@ -25,19 +29,20 @@
   <main class="wrap">
     <p class="breadcrumbs"><a href="../">バイカレ</a> / アカウント削除申請</p>
     <h1 class="page-title">バイカレ アカウント削除申請</h1>
-    <p class="lead">アプリにログインできない場合や、アプリをアンインストールした場合も、再インストールやログインなしで削除希望を申し出ることができます。</p>
+    <p class="lead">正式運用開始後は、アプリにログインできない場合やアプリをアンインストールした場合も、再インストールやログインなしで削除希望を申し出られるようにする予定です。</p>
     <section class="contact" id="request" aria-labelledby="request-title">
-      <h2 id="request-title">アカウント削除を申請する</h2>
+      <h2 id="request-title">削除申請の準備状況</h2>
+      <p><strong>正式な削除受付・本人確認付き削除処理は現在準備中です。</strong> 下記は予定している申請窓口です。運営者への一般的な問い合わせはできますが、現時点で削除完了を保証するものではありません。</p>
       <p>運営者：<strong>バイカレ運営（Amayaichi）</strong></p>
-      <p>受付メール：<a class="email" href="mailto:81app.dev@gmail.com?subject=BuyCalendar%20Account%20Deletion%20Request">81app.dev@gmail.com</a></p>
+      <p>受付メール：<a class="email" href="mailto:81app.dev@gmail.com?subject=BuyCalendar%20Inquiry">81app.dev@gmail.com</a></p>
       <div class="actions">
-        <a class="button primary" href="mailto:81app.dev@gmail.com?subject=BuyCalendar%20Account%20Deletion%20Request">削除申請メールを作成</a>
+        <span class="button primary button-disabled" aria-disabled="true">削除申請メール（正式受付準備中）</span>
       </div>
-      <p>メールアプリが開かない場合は、宛先 <strong>81app.dev@gmail.com</strong>、件名「バイカレ アカウント削除申請」でメールを作成し、本文に「バイカレのアカウント削除を希望」と記載してください。</p>
-      <p class="muted">申請の時点でアカウントが削除されるわけではありません。運営者が本人確認と必要な手続きを案内します。最初のメールにパスワード、復旧コード、認証情報を記載しないでください。</p>
+      <p>正式受付開始後は、このページからアカウント削除申請のメールを作成できるようにする予定です。今はサイト表示の確認用として公開しています。問い合わせは上記メールアドレスをご利用ください。</p>
+      <p class="muted">正式運用時も、申請の時点でアカウントが削除されるわけではありません。運営者が本人確認と必要な手続きを案内します。最初のメールにパスワード、復旧コード、認証情報を記載しないでください。</p>
     </section>
     <section class="surface" aria-labelledby="procedure">
-      <h2 id="procedure">申請から削除までの流れ</h2>
+      <h2 id="procedure">申請から削除までの予定フロー</h2>
       <ol>
         <li><strong>申請を送信：</strong>上記窓口からアカウント削除を希望する旨をご連絡ください。</li>
         <li><strong>受付・一次返信：</strong>申請を受け付けた日から原則7日以内に、本人確認と必要な追加手続きを案内します。</li>
@@ -58,10 +63,10 @@
         <table>
           <thead><tr><th scope="col">保持する情報</th><th scope="col">保持期間・目的</th></tr></thead>
           <tbody>
-            <tr><th scope="row">一般セキュリティ監査ログ（運営アプリが管理する分）</th><td>原則30日間。不正利用の調査や障害対応のためです。クラウド提供者が管理するログには別の保存条件が適用されます。</td></tr>
-            <tr><th scope="row">アカウント削除完了の最小証跡</th><td>完了後90日間。削除処理の確認と安全な障害対応のためです。</td></tr>
+            <tr><th scope="row">一般セキュリティ監査ログ（運営アプリが管理する分）</th><td>アプリが管理する範囲で30日間を目標としています。実保存・削除は検証中です。不正利用の調査や障害対応のためです。クラウド提供者が管理するログには別の保存条件が適用されます。</td></tr>
+            <tr><th scope="row">アカウント削除完了の最小証跡</th><td>完了後90日間を目標としています。実際の運用は検証中です。削除処理の確認と安全な障害対応のためです。</td></tr>
             <tr><th scope="row">削除処理中のジョブ・再利用防止情報</th><td>処理中の記録は完了まで保持します。削除済みユーザーIDの再利用防止に必要な最小限の情報は、安全に除去できる条件が整うまで保持します。</td></tr>
-            <tr><th scope="row">運営者管理のクラウドバックアップ</th><td>導入した場合は作成から30日間。退会データが保持期限までバックアップに残ることがあります。復元時には削除済みデータの再有効化を防ぎます。</td></tr>
+            <tr><th scope="row">運営者管理のクラウドバックアップ</th><td>導入した場合は作成から30日間の保持を目標としています。退会データが残る期間や復元時の措置は検証中です。復元時には削除済みデータの再有効化を防ぎます。</td></tr>
             <tr><th scope="row">継続する家族の共有購入履歴</th><td>世帯の共有情報として維持し、退会者を匿名化します。世帯解散時は別途削除確認を行います。</td></tr>
           </tbody>
         </table>
@@ -74,7 +79,7 @@
       <ul>
         <li>パスキーの秘密情報、復旧コードの原文、パスワード、認証トークン、世帯招待コードをメールに記載しないでください。</li>
         <li>運営者からの返信やメールの所有だけで本人確認が完了することはありません。</li>
-        <li>アプリにログインできる場合は、設定画面の「アカウントを削除」から削除することもできます。</li>
+        <li>正式運用開始後は、アプリにログインできる場合、設定画面の「アカウントを削除」から削除する方式を予定しています。</li>
         <li>定期購入がある場合は、アカウント削除と別にストア側での定期購入解約が必要な場合があります。</li>
       </ul>
     </section>
